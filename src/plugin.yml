@@ -8,30 +8,30 @@ description: >
              Provides multiworld support
 commands:
    multiworld:
-      description: all the commands
+      description: 多世界插件指令帮助
       usage:
            /<command> <commandaction> <arg1> <arg2>
    mw:
-      description: all the commands
+      description: 所有指令
       usage:
            /<command> <commandaction> <arg1> <arg2>
    goto:
-      description: teleport to a world
+      description: 传送到一个世界
       usage:
            /<command> <world>
       permission: multiworld.command.goto
 permissions:
     multiworld.*:
-        description: same as multiworld.admin
+        description: 与 multiworld.admin 相同
         children:
             multiworld.admin: true
     multiworld.minium:
-        description: The most used permissions
+        description: 最常用的权限
         children:
             multiworld.command.goto: true
             multiworld.command.list: true
     multiworld.basic:
-        description: Just the basic permissions
+        description: 基本权限
         children:
             multiworld.minium: true
             multiworld.command.getflag: true
@@ -40,7 +40,7 @@ permissions:
             multiworld.command.info: true
             multiworld.creativemode: true
     multiworld.moderate:
-        description: moderator settings
+        description: 巡查员权限
         children:
             multiworld.basic: true
             multiworld.command.setflag: true
@@ -49,91 +49,91 @@ permissions:
             multiworld.command.link: true
             multiworld.command.move: true
     multiworld.admin:
-        description: admin settings
+        description: 管理员权限
         children:
             multiworld.moderate: true
-            multiworld.worldmaneger: true    
+            multiworld.worldmaneger: true
             multiworld.command.debug: true
             multiworld.command.spawn: true
             multiworld.command.setspawn: true
             multiworld.command.listgens: true
     multiworld.worldmaneger:
-        description: settings for world managers
+        description: 世界管理者权限
         children:
             multiworld.command.world.create: true
-            multiworld.command.world.unload: true    
+            multiworld.command.world.unload: true
             multiworld.command.world.load: true
             multiworld.command.world.delete: true
             multiworld.command.list: true
     multiworld.command.goto:
-        description: Teleport to a world.
+        description: 传送到指定的世界
         default: op
     multiworld.command.list:
-        description: list al the worlds.
+        description: 列出所有世界
         default: op
     multiworld.command.unload:
-        description: unloads a world.
+        description: 卸载世界
         default: op
     multiworld.command.load:
-        description: loads a world.
+        description: 加载世界
         default: op
     multiworld.command.create:
-        description: Creates a world.
+        description: 创建一个世界
         default: op
     multiworld.command.delete:
-        description: Deletes a world.
+        description: 删除一个世界
         default: op
     multiworld.command.save:
-        description: save the data.
+        description: 保存数据
         default: op
     multiworld.command.link:
-        description: chance the nether/end portals links.
+        description: 链接世界的地狱/末地门传送到另一个世界
         children:
             multiworld.command.link.*: true
     multiworld.command.link.*:
-        description: chance the nether/end portals links.
+        description: 链接世界的地狱/末地门传送到另一个世界
         children:
             multiworld.command.link.nether: true
             multiworld.command.link.end: true
     multiworld.command.link.nether:
-        description: chance the Nether portals links.
+        description: 链接世界的地狱门传送到另一个世界
         default: op
     multiworld.command.link.end:
-        description: chance the End portals links.
+        description: 链接世界的末地门传送到另一个世界
         default: op
     multiworld.command.reload:
-        description: reload the plugin.
+        description: 重新加载插件
         default: op
     multiworld.command.help:
-        description: shows the help text.
+        description: 显示帮助文本
         default: op
     multiworld.command.setflag:
-        description: sets an world option.
+        description: 设置一个世界的选项
         default: op
     multiworld.command.getflag:
-        description: get an world option.
+        description: 获取一世界的选项
         default: op
     multiworld.creativemode:
-        description: able to get the creative mode at creative worlds.
+        description: 在创造模式的世界获取创造模式
         default: op
     multiworld.command.debug:
-        description: shows debug information about the plugin.
+        description: 显示多世界插件调试信息
         default: op
     multiworld.command.move:
-        description: move a player to another world.
+        description: 将一个玩家移动到另一个世界
         default: op
     multiworld.command.spawn:
-        description: Go to the spawn of a world.
+        description: 传送到世界的出生点
         default: op
     multiworld.command.setspawn:
-        description: Sets the spawn of a world.
+        description: 设置世界的出生点
         default: op
     multiworld.command.flaglist:
-        description: List al flags used by /mw getflag
+        description: 使用 /mw getflag 世界使用的标志
         default: op
     multiworld.command.listgens:
-        description: List al useable world generators
+        description: 列出所有可用的世界生成器
         default: op
     multiworld.command.info:
-        description: List basic information from a world
+        description: 列出世界的基本信息
         default: op
