@@ -1,7 +1,6 @@
 package multiworld;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
@@ -13,10 +12,7 @@ import multiworld.data.InternalWorld;
 import multiworld.data.MyLogger;
 import multiworld.data.PlayerHandler;
 import multiworld.data.ReloadHandler;
-import multiworld.data.WorldContainer;
 import multiworld.data.WorldHandler;
-import multiworld.metrics.Metrics;
-import multiworld.metrics.Metrics.Graph;
 import multiworld.worldgen.SimpleChunkGen;
 import multiworld.worldgen.WorldGenerator;
 import org.bukkit.Bukkit;
@@ -297,102 +293,5 @@ public class MultiWorldPlugin extends JavaPlugin
 	private void submitStats()
 	{
 		//Hit Performance
-		return;
-		try
-		{
-			Metrics metrics = new Metrics(this);
-			Graph graph = metrics.createGraph("components used");
-			{
-				graph.addPlotter(new Metrics.Plotter("GameMode chancer used")
-				{
-					@Override
-					public int getValue()
-					{
-						return data.getNode(DataHandler.OPTIONS_GAMEMODE) ? 1 : 0;
-					}
-				});
-				graph.addPlotter(new Metrics.Plotter("NetherPortal chancer used")
-				{
-					@Override
-					public int getValue()
-					{
-						return data.getNode(DataHandler.OPTIONS_LINK_NETHER) ? 1 : 0;
-					}
-				});
-				graph.addPlotter(new Metrics.Plotter("EndPortal chancer used")
-				{
-					@Override
-					public int getValue()
-					{
-						return data.getNode(DataHandler.OPTIONS_LINK_END) ? 1 : 0;
-					}
-				});
-				graph.addPlotter(new Metrics.Plotter("WorldChatSeperator used")
-				{
-					@Override
-					public int getValue()
-					{
-						return data.getNode(DataHandler.OPTIONS_WORLD_CHAT) ? 1 : 0;
-					}
-				});
-				graph.addPlotter(new Metrics.Plotter("EnderBlock used")
-				{
-					@Override
-					public int getValue()
-					{
-						return data.getNode(DataHandler.OPTIONS_BLOCK_ENDER_CHESTS) ? 1 : 0;
-					}
-				});
-				graph.addPlotter(new Metrics.Plotter("WorldSpawnChancer used")
-				{
-					@Override
-					public int getValue()
-					{
-						return data.getNode(DataHandler.OPTIONS_WORLD_SPAWN) ? 1 : 0;
-					}
-				});
-			}
-			graph = metrics.createGraph("Generators used");
-			for (final WorldGenerator gen : WorldGenerator.values())
-			{
-				graph.addPlotter(new Metrics.Plotter(gen.getName())
-				{
-					@Override
-					public int getValue()
-					{
-						int returnValue = 0;
-						for (WorldContainer world : data.getWorlds())
-						{
-							if (world.getWorld().getMainGen().equals(gen.name()))
-							{
-								returnValue++;
-							}
-						}
-						return returnValue;
-					}
-				});
-			}
-			metrics.addCustomData(new Metrics.Plotter("Worlds Existing")
-			{
-				@Override
-				public int getValue()
-				{
-					return data.getAllWorlds().length;
-				}
-			});
-			metrics.addCustomData(new Metrics.Plotter("Worlds Loaded")
-			{
-				@Override
-				public int getValue()
-				{
-					return data.getWorlds(true).length;
-				}
-			});
-			metrics.start();
-		}
-		catch (IOException e)
-		{
-			// Failed to submit the stats :-(
-		}
 	}
 }

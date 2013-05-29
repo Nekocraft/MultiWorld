@@ -15,6 +15,10 @@
 			<id>bukkit-repo</id>
 			<url>http://repo.bukkit.org/content/groups/public</url>
 		</repository>
+		<repository>
+			<id>sk89q-mvn2</id>
+			<url>http://mvn2.sk89q.com/repo</url>
+		</repository>
 	</repositories>
 
 	<dependencies>
@@ -22,6 +26,11 @@
 			<groupId>org.bukkit</groupId>
 			<artifactId>bukkit</artifactId>
 			<version>1.5.2-R0.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>net.milkbowl.vault</groupId>
+			<artifactId>Vault</artifactId>
+			<version>1.2.16</version>
 		</dependency>
 	</dependencies>
 
@@ -45,12 +54,12 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.4.2</version>
+				<version>2.3.2</version>
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
 				</configuration>
-			</plugin>d
+			</plugin>
 		</plugins>
 	</build>
 </project>
