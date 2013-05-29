@@ -21,7 +21,7 @@ public class Formatter
 	{
 		return (b ? BOOLEAN_TRUE : BOOLEAN_FALSE);
 	}
-	private final static String UNKNOWN_FLAG = ChatColor.GOLD + "Unknown";
+	private final static String UNKNOWN_FLAG = ChatColor.GOLD + "未知";
 
 	public static String printFlag(FlagValue flag)
 	{

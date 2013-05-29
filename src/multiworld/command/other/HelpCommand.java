@@ -32,7 +32,7 @@ public class HelpCommand extends Command
 				helpType = tmp;
 			}
 		}
-		Utils.sendMessage(sender,ChatColor.BLUE+"Now printing all commands for help type: "+ helpType, 12);
+		Utils.sendMessage(sender,ChatColor.BLUE+"这里是帮助信息喵: "+ helpType, 12);
 		if(helpType.equals("main"))
 		{
 			this.sendMainHelp(sender);
@@ -61,42 +61,42 @@ public class HelpCommand extends Command
 	
 	private void sendMainHelp(CommandSender sender)
 	{
-		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw help" +                                  ChatColor.GREEN + " - shows this help text",12);
-		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw help user" +                             ChatColor.GREEN + " - shows the help text for user commands",12);
-		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw help admin" +                            ChatColor.GREEN + " - shows the help text for admin commands",12);
-		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw help advanced" +                         ChatColor.GREEN + " - shows the help text for advanced admin commands",12);
-		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw help world" +                            ChatColor.GREEN + " - shows the help text for advanced world management",12);
+		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw help" +                                  ChatColor.GREEN + " - 显示帮助文本",12);
+		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw help user" +                             ChatColor.GREEN + " - 显示用户帮助文本",12);
+		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw help admin" +                            ChatColor.GREEN + " - 显示管理帮助文本",12);
+		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw help advanced" +                         ChatColor.GREEN + " - 显示高级管理帮助文本",12);
+		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw help world" +                            ChatColor.GREEN + " - 显示世界管理帮助文本",12);
 	}
 	
 	private void sendUserHelp(CommandSender sender)
 	{
-		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw list" +                                  ChatColor.GREEN + " - list all the worlds on the server",12);
-		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw help" +                                  ChatColor.GREEN + " - shows this help text",12);
-		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw goto <world name>" +                     ChatColor.GREEN + " - warps you to <world name>",12);
-		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw debug" +                                 ChatColor.GREEN + " - shows debug information",12);
+		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw list" +                                  ChatColor.GREEN + " - 列出服务器中的所有世界",12);
+		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw help" +                                  ChatColor.GREEN + " - 显示帮助文本",12);
+		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw goto <世界名>" +                         ChatColor.GREEN + " - 传送到 <世界名>",12);
+		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw debug" +                                 ChatColor.GREEN + " - 显示调试信息",12);
 	}
 	
 	private void sendAdminHelp(CommandSender sender)
 	{
 		
-		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw load" +                                  ChatColor.GREEN + " - Reload multiworld",12);
-		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw save" +                                  ChatColor.GREEN + " - Saves multiworld",12);
-		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw move <player> <world>" +                 ChatColor.GREEN + " - Moves a player to a world",12);
+		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw load" +                                  ChatColor.GREEN + " - 重新加载多世界插件",12);
+		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw save" +                                  ChatColor.GREEN + " - 保存多世界插件",12);
+		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw move <玩家名> <世界名>" +                ChatColor.GREEN + " - 移动玩家到一个世界",12);
 	}
 	
 	private void sendAdvancedHelp(CommandSender sender)
 	{
-		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw getflag <world> <flagname>" +            ChatColor.GREEN + " - Get a flag",12);
-		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw setflag <world> <flagname> <newvalue>" + ChatColor.GREEN + " - Set a flag",12);
-		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw flaglist" +                              ChatColor.GREEN + " - List all flags",12);
-		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw link <target world> [to world]" +        ChatColor.GREEN + " - Link portals to worlds",12);
+		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw getflag <世界名> <标志名>" +            ChatColor.GREEN + " - 获取一个世界的标志的值",12);
+		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw setflag <世界名> <标志名> <新值>" +     ChatColor.GREEN + " - 设置一个世界的标志的值",12);
+		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw flaglist" +                             ChatColor.GREEN + " - 列出可用的标志列表",12);
+		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw link <源世界> [目标世界]" +             ChatColor.GREEN + " - 链接世界的传送门到一个世界",12);
 	}
 
 	private void sendWorldHelp(CommandSender sender)
 	{
-		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw create <world name> [type] [seed]" +     ChatColor.GREEN + " - Makes a new <type> world named <world name>",12);
-		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw delete <world name>" +                   ChatColor.GREEN + " - Removes <world name> from the multiworld world list",12);
-		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw unload <world name>" +                   ChatColor.GREEN + " - Unloads <world name> from the world list",12);
-		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw load <world name>" +                     ChatColor.GREEN + " - Loads <world name> from the world list",12);
+		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw create <世界名> [类型] [种子]" +        ChatColor.GREEN + " - 创建一个 <类型> 的 <世界名> 世界 ",12);
+		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw delete <世界名>" +                      ChatColor.GREEN + " - 从世界列表中删除 <世界名> ",12);
+		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw unload <世界名>" +                      ChatColor.GREEN + " - 从世界列表中卸载 <世界名> ",12);
+		Utils.sendMessage(sender, ChatColor.YELLOW + "/mw load <世界名>" +                        ChatColor.GREEN + " - 从世界列表中加载 <世界名> ",12);
 	}
 }

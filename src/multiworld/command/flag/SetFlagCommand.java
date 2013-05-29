@@ -38,7 +38,7 @@ public class SetFlagCommand extends Command
 	{
 		if (split.length != 3)
 		{
-			throw new ArgumentException("/mw setflag <world> <flag> <value>"); //NOI18N
+			throw new ArgumentException("/mw setflag <世界名> <标志> <值>"); //NOI18N
 		}
 		else
 		{
@@ -61,7 +61,7 @@ public class SetFlagCommand extends Command
 			catch (ConfigException e)
 			{
 				s.sendMessage(ChatColor.RED + this.d.getLang().getString("flag.set.err"));
-				this.d.getLogger().throwing("multiworld.MultiWorld", "onCommand", e, "User command setflag error"); //NOI18N
+				this.d.getLogger().throwing("multiworld.MultiWorld", "onCommand", e, "用户设置标志出错"); //NOI18N
 			}
 		}
 	}

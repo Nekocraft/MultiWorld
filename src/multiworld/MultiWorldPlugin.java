@@ -83,21 +83,21 @@ public class MultiWorldPlugin extends JavaPlugin
 			this.commandHandler = new CommandHandler(this.data, this.playerHandler, this.worldHandler, this.reloadHandler, this.getPluginHandler(), this.getPluginHandler());
 			this.pluginHandler.onSettingsChance();
 			this.submitStats();
-			this.log.info("v" + this.version + " enabled."); //NOI18N
+			this.log.info("v" + this.version + " 已启用."); //NOI18N
 
 		}
 		catch (ConfigException e)
 		{
-			this.getServer().getLogger().log(Level.SEVERE, "[MultiWorld] error while enabling:".concat(e.toString())); //NOI18N
-			this.getServer().getLogger().severe("[MultiWorld] plz check the configuration for anny misplaced tabs, full error:"); //NOI18N
+			this.getServer().getLogger().log(Level.SEVERE, "[MultiWorld] 启用失败:".concat(e.toString())); //NOI18N
+			this.getServer().getLogger().severe("[MultiWorld] 配置文件加载失败 请检查配置文件:"); //NOI18N
 			e.printStackTrace(System.err);
 			this.errorStatus = true;
 			this.setEnabled(false);
 		}
 		catch (RuntimeException e)
 		{
-			this.getServer().getLogger().log(Level.SEVERE, "[MultiWorld] error while enabling:".concat(e.toString())); //NOI18N
-			this.getServer().getLogger().severe("[MultiWorld] plz report the full error to the author:"); //NOI18N
+			this.getServer().getLogger().log(Level.SEVERE, "[MultiWorld] 启用失败:".concat(e.toString())); //NOI18N
+			this.getServer().getLogger().severe("[MultiWorld] 请将错误报告提供给作者:"); //NOI18N
 			e.printStackTrace(System.err);
 			this.errorStatus = true;
 			this.setEnabled(false);
@@ -112,7 +112,7 @@ public class MultiWorldPlugin extends JavaPlugin
 	{
 		if (!this.errorStatus)
 		{
-			this.log.info("Disabled."); //NOI18N
+			this.log.info("已禁用."); //NOI18N
 			this.getPluginHandler().disableAll();
 		}
 		else
@@ -296,6 +296,8 @@ public class MultiWorldPlugin extends JavaPlugin
 
 	private void submitStats()
 	{
+		//Hit Performance
+		return;
 		try
 		{
 			Metrics metrics = new Metrics(this);

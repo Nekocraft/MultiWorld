@@ -39,7 +39,7 @@ public class GotoCommand extends Command
 		Player player = this.p.getPlayer(sender);
 		if (arg.length != 1)
 		{
-			throw new ArgumentException("/goto <world>"); //NOI18N
+			throw new ArgumentException("/goto <世界名>"); //NOI18N
 		}
 		InternalWorld worldObj = w.getWorld(arg[0],true);
 		p.movePlayer(player, worldObj.getWorld());

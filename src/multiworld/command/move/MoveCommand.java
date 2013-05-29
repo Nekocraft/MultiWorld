@@ -40,7 +40,7 @@ public class MoveCommand extends Command
 	{
 		if (split.length != 2)
 		{
-			throw new ArgumentException("/mw move <player> <world>"); //NOI18N
+			throw new ArgumentException("/mw move <玩家名> <世界名>"); //NOI18N
 		}
 		else
 		{
@@ -53,7 +53,7 @@ public class MoveCommand extends Command
 			}
 
 			this.p.movePlayer(targetPlayer, destinationWorld.getWorld());
-			targetPlayer.sendMessage("You are been moved to world \"" + destinationWorld.getName() + "\" by: " + Utils.getPlayerName(s));
+			targetPlayer.sendMessage("你已被" + Utils.getPlayerName(s) + "传送到世界 \"" + destinationWorld.getName() + "\" ");
 			s.sendMessage("Moved player");
 
 		}

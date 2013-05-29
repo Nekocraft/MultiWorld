@@ -29,8 +29,8 @@ public class DebugCommand extends Command
 	@Override
 	public void runCommand(CommandSender s, String[] arguments) throws CommandException
 	{
-		s.sendMessage(ChatColor.BLUE + "Now printing debug information");
-		s.sendMessage(Formatter.createList(ChatColor.WHITE, "name", "version"));
+		s.sendMessage(ChatColor.BLUE + "显示调试信息");
+		s.sendMessage(Formatter.createList(ChatColor.WHITE, "名字", "版本"));
 		s.sendMessage(Formatter.createList(ChatColor.WHITE, "Bukkit", Bukkit.getVersion()));
 		s.sendMessage(Formatter.createList(ChatColor.WHITE, "Multiworld", this.debug.getVersion()));
 		s.sendMessage(ChatColor.BLUE + "----------------------------------------------");
