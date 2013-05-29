@@ -4,4 +4,4 @@ options:
   usecreativemode: false
   usecreativemodeinv: true
   useportalhandler: false
-  locale: us_US
+  locale: zh_CN
